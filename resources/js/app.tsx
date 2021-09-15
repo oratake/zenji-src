@@ -15,8 +15,11 @@ require('./bootstrap');
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom';
+import { CssBaseline } from '@material-ui/core';
+import { ThemeProvider } from '@material-ui/styles';
 import index from './pages/index.tsx';
 import About from './pages/About';
+import theme from './theme.ts';
 
 const App = () => {
   return (
@@ -28,6 +31,12 @@ const App = () => {
 }
 
 if (document.getElementById('app')) {
-  ReactDOM.render(<App />, document.getElementById('app'));
+  ReactDOM.render(
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <App />
+    </ThemeProvider>,
+    document.getElementById('app')
+  );
 }
 
