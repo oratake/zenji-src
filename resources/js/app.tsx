@@ -15,13 +15,13 @@ require('./bootstrap');
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom';
-import Index from './pages/Index';
+import index from './pages/index.tsx';
 import About from './pages/About';
 
 const App = () => {
   return (
     <BrowserRouter>
-      <Route exact path="/" component={Index} />
+      <Route exact path="/" component={index} />
       <Route path="/about" component={About} />
     </BrowserRouter>
   );
