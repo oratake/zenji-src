@@ -18,14 +18,14 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import { CssBaseline } from '@material-ui/core';
 import { ThemeProvider } from '@material-ui/styles';
 import index from './pages/index.tsx';
-import About from './pages/About';
+import Dashboard from './pages/Dashboard.tsx';
 import theme from './theme.ts';
 
 const App = () => {
   return (
     <BrowserRouter>
       <Route exact path="/" component={index} />
-      <Route path="/about" component={About} />
+      <Route path="/dashboard" component={Dashboard} />
     </BrowserRouter>
   );
 }
