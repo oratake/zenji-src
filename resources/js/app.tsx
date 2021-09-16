@@ -17,9 +17,9 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { CssBaseline } from '@material-ui/core';
 import { ThemeProvider } from '@material-ui/styles';
-import index from './pages/index.tsx';
-import Dashboard from './pages/Dashboard.tsx';
-import theme from './theme.ts';
+import index from './pages/index';
+import Dashboard from './pages/Dashboard';
+import theme from './theme';
 
 const App = () => {
   return (
