@@ -4,7 +4,8 @@
  * building robust, powerful web applications using React + Laravel.
  */
 
-require('./bootstrap');
+// TODO: 折を見て削除する issue #2
+// require('./bootstrap');
 
 /**
  * Next, we will create a fresh React component instance and attach it to
@@ -15,8 +16,8 @@ require('./bootstrap');
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom';
-import { CssBaseline } from '@material-ui/core';
-import { ThemeProvider } from '@material-ui/styles';
+import { CssBaseline } from '@mui/material';
+import { ThemeProvider } from '@mui/material/styles';
 import index from './pages/index';
 import Dashboard from './pages/Dashboard';
 import theme from './theme';
