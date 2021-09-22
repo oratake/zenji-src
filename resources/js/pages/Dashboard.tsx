@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Badge, Box, Button, Divider, IconButton, List, Toolbar, Typography } from '@mui/material';
+import { Badge, Box, Button, Container, CssBaseline, Divider, Grid, IconButton, List, Paper, Toolbar, Typography } from '@mui/material';
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
 import MuiDrawer from '@mui/material/Drawer';
 import { styled, createStyles, Theme } from '@mui/material/styles';
@@ -66,6 +66,7 @@ const Dashboard = () => {
 
   return (
     <Box sx={{ display: 'flex' }}>
+      <CssBaseline />
       <AppBar position="absolute" open={open}>
         <Toolbar>
           <IconButton
@@ -111,11 +112,63 @@ const Dashboard = () => {
           </IconButton>
         </Toolbar>
         <Divider />
-        <List>List1</List>
+        <List>
+          <Link to="/">back to index</Link>
+        </List>
         <Divider />
         <List>List2</List>
       </Drawer>
-      <div><Link to="/">back to index</Link></div>
+      <Box
+          component="main"
+          sx={{
+            backgroundColor: (theme) =>
+              theme.palette.mode === 'light'
+                ? theme.palette.grey[100]
+                : theme.palette.grey[900],
+            flexGrow: 1,
+            height: '100vh',
+            overflow: 'auto',
+          }}
+      >
+        <Toolbar />
+        <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+          <Grid container spacing={3}>
+            {/* Chart */}
+            <Grid item xs={12} md={8} lg={9}>
+              <Paper
+                sx={{
+                  p: 2,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  height: 240,
+                }}
+              >
+                {/* <Chart /> */}
+              </Paper>
+            </Grid>
+            {/* Recent Deposits */}
+            <Grid item xs={12} md={4} lg={3}>
+              <Paper
+                sx={{
+                  p: 2,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  height: 240,
+                }}
+              >
+                {/* <Deposits /> */}
+              </Paper>
+            </Grid>
+            {/* Recent Orders */}
+            <Grid item xs={12}>
+              <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
+                {/* <Orders /> */}
+              </Paper>
+            </Grid>
+          </Grid>
+          {/* <Copyright sx={{ pt: 4 }} /> */}
+        </Container>
+      </Box>
     </Box>
   );
 }
