@@ -4,7 +4,8 @@
  * building robust, powerful web applications using React + Laravel.
  */
 
-require('./bootstrap');
+// TODO: 折を見て削除する issue #2
+// require('./bootstrap');
 
 /**
  * Next, we will create a fresh React component instance and attach it to
@@ -15,17 +16,27 @@ require('./bootstrap');
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom';
-import About from './pages/About';
+import { CssBaseline } from '@mui/material';
+import { ThemeProvider } from '@mui/material/styles';
+import index from './pages/index';
+import Dashboard from './pages/Dashboard';
+import theme from './theme';
 
 const App = () => {
   return (
     <BrowserRouter>
-      <Route path="/about" component={About} />
+      <Route exact path="/" component={index} />
+      <Route path="/dashboard" component={Dashboard} />
     </BrowserRouter>
   );
 }
 
 if (document.getElementById('app')) {
-  ReactDOM.render(<App />, document.getElementById('app'));
+  ReactDOM.render(
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <App />
+    </ThemeProvider>,
+    document.getElementById('app')
+  );
 }
-
