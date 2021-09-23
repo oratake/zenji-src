@@ -1,0 +1,14 @@
+runtime: php74
+
+handlers:
+# react compiled data
+- url: /js
+  static_dir: public/js
+
+env_variables:
+  APP_STORAGE: /tmp
+  VIEW_COMPILED_PATH: /tmp
+  SESSION_DRIVER: cookie
+
+includes:
+- env.yaml
