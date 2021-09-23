@@ -6,7 +6,9 @@ handlers:
   static_dir: public/js
 
 env_variables:
-  APP_KEY: base64:Rb1MVfwFWlVCbCcquR8AgLjVB+ChGewqqxhv6i6W9Qs=
   APP_STORAGE: /tmp
   VIEW_COMPILED_PATH: /tmp
   SESSION_DRIVER: cookie
+
+includes:
+- env.yaml
